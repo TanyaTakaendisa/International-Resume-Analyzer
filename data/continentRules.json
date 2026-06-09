@@ -1,0 +1,96 @@
+{
+    "North America": {
+      "preferredLength": "1 page",
+      "photo": false,
+      "objectiveStatement": "Optional",
+      "skillsSection": true,
+      "educationPlacement": "After experience if experienced",
+      "focusAreas": [
+        "Quantifiable achievements",
+        "Technical skills",
+        "Internships and projects"
+      ],
+      "avoid": [
+        "Photos",
+        "Age",
+        "Marital status"
+      ],
+      "tips": [
+        "Use action verbs",
+        "Include measurable accomplishments",
+        "Tailor keywords to the job description"
+      ]
+    },
+  
+    "Europe": {
+      "preferredLength": "1-2 pages",
+      "photo": "Depends on country",
+      "objectiveStatement": "More common",
+      "skillsSection": true,
+      "educationPlacement": "Varies",
+      "focusAreas": [
+        "Professional experience",
+        "Languages spoken",
+        "Formal qualifications"
+      ],
+      "avoid": [
+        "Excessive graphics"
+      ],
+      "tips": [
+        "Consider country-specific norms",
+        "Include language proficiency"
+      ]
+    },
+  
+    "Asia": {
+      "preferredLength": "1-2 pages",
+      "photo": "Common in some countries",
+      "skillsSection": true,
+      "focusAreas": [
+        "Education",
+        "Technical certifications",
+        "Academic performance"
+      ],
+      "tips": [
+        "Research country expectations carefully"
+      ]
+    },
+  
+    "Africa": {
+      "preferredLength": "1-2 pages",
+      "skillsSection": true,
+      "focusAreas": [
+        "Relevant experience",
+        "Projects",
+        "Education"
+      ],
+      "tips": [
+        "Highlight impact and responsibilities"
+      ]
+    },
+  
+    "South America": {
+      "preferredLength": "1-2 pages",
+      "skillsSection": true,
+      "focusAreas": [
+        "Professional experience",
+        "Education"
+      ],
+      "tips": [
+        "Keep formatting professional and concise"
+      ]
+    },
+  
+    "Oceania": {
+      "preferredLength": "2 pages",
+      "photo": false,
+      "focusAreas": [
+        "Achievements",
+        "Technical experience",
+        "Projects"
+      ],
+      "tips": [
+        "Demonstrate measurable contributions"
+      ]
+    }
+  }

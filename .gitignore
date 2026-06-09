@@ -1,0 +1,28 @@
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Node modules (if added later)
+node_modules/
+
+# Logs
+*.log
+
+# Environment files
+.env
+
+# Temporary files
+*.tmp
+*.temp
+
+# Build folders
+dist/
+build/
+
+# Cache
+.cache/
+
+# OS generated files
+Thumbs.db
