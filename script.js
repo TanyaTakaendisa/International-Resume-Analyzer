@@ -7,7 +7,7 @@ const feedbackBox = document.getElementById("feedbackBox");
 // Load continent rules
 async function loadRules() {
     try {
-        const response = await fetch("./data/continentRules.json");
+        const response = await fetch("data/continentRules.json");
 
         if (!response.ok) {
             throw new Error("Unable to load continent rules.");
