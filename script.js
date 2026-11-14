@@ -88,8 +88,6 @@ function showStep(stepNumber) {
 // STEP 1: RESUME UPLOAD
 // ==========================================
 
-// Display the selected file name
-
 resumeUpload.addEventListener("change", function () {
 
     uploadError.textContent = "";
@@ -102,13 +100,19 @@ resumeUpload.addEventListener("change", function () {
         return;
     }
 
-    const allowedExtensions = [".pdf", ".docx"];
+    const allowedTypes = [
+        "application/pdf",
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    ];
 
-    const extension = file.name
+    const fileExtension = file.name
         .substring(file.name.lastIndexOf("."))
         .toLowerCase();
 
-    if (!allowedExtensions.includes(extension)) {
+    if (
+        !allowedTypes.includes(file.type) ||
+        ![".pdf", ".docx"].includes(fileExtension)
+    ) {
 
         selectedResume = null;
         resumeUpload.value = "";
@@ -116,32 +120,21 @@ resumeUpload.addEventListener("change", function () {
         fileName.textContent = "No file selected";
 
         uploadError.textContent =
-            "Please upload a PDF or DOCX file.";
+            "Please select a valid PDF or DOCX resume.";
 
         return;
     }
+
+    // Store the selected file in JavaScript
 
     selectedResume = file;
 
-    fileName.textContent = `Selected file: ${file.name}`;
-});
+    // Display the selected filename
 
+    fileName.textContent = "Selected file: " + file.name;
 
-// Continue to Step 2
+    console.log("Resume selected successfully:", selectedResume);
 
-continueBtn.addEventListener("click", function () {
-
-    uploadError.textContent = "";
-
-    if (!selectedResume) {
-
-        uploadError.textContent =
-            "Please select your resume before continuing.";
-
-        return;
-    }
-
-    showStep(2);
 });
 
 
