@@ -1,132 +1,182 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
+    
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <title>International Resume Analyzer</title>
 
-    <title>
-        International Resume Analyzer
-    </title>
-
-    <link
-        rel="stylesheet"
-        href="style.css">
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <script src="script.js"> defer</script>
 <body>
 
     <header>
-
-        <h1>
-            International Resume Analyzer
-        </h1>
-
+        <h1>International Resume Analyzer</h1>
         <p>
-            Optimize your resume for global job markets.
-            Upload your resume and receive
-            continent-specific recommendations.
+            Get recommendations to help adapt your resume
+            to hiring expectations in different regions of the world.
         </p>
 
     </header>
 
     <main>
 
-        <section class="upload-container">
+        <!-- Progress indicator -->
+        <div class="progress-container">
+            <div class="progress-labels">
+                <span id="stepLabel1" class="active-label">1. Upload</span>
+                <span id="stepLabel2">2. Region</span>
+                <span id="stepLabel3">3. Results</span>
+            </div>
 
-            <h2>
-                Upload Resume
-            </h2>
+            <div class="progress-track">
+                <div id="progressBar"></div>
+            </div>
+        </div>
 
-            <input
-                type="file"
-                id="resumeUpload"
-                accept=".pdf,.doc,.docx,.txt">
 
-            <label
-                for="continent">
+        <!-- STEP 1: Upload Resume -->
+        <section id="step1" class="step-card">
 
-                Target Region
+            <h2>Upload Your Resume</h2>
 
-            </label>
+            <p class="step-description">
+                Begin by uploading the resume you would like to analyze.
+                We currently accept PDF and DOCX files.
+            </p>
 
-            <select id="continent">
+            <div class="upload-area">
+                <div class="upload-icon">↑</div>
 
-                <option value="">
-                    Select Region
-                </option>
+                <h3>Select Your Resume</h3>
 
-                <option>
-                    North America
-                </option>
+                <p>Choose a PDF or DOCX file from your device.</p>
 
-                <option>
-                    Europe
-                </option>
+                <input
+                    type="file"
+                    id="resumeUpload"
+                    accept=".pdf,.docx"
+                >
 
-                <option>
-                    Asia
-                </option>
+                <label for="resumeUpload" class="file-label">
+                    Browse Files
+                </label>
 
-                <option>
-                    Africa
-                </option>
+                <p id="fileName" class="file-name">
+                    No file selected
+                </p>
+            </div>
 
-                <option>
-                    South America
-                </option>
+            <p id="uploadError" class="error-message"></p>
 
-                <option>
-                    Oceania
-                </option>
-
-            </select>
-
-            <button id="analyzeBtn">
-
-                Analyze Resume
-
+            <button id="continueBtn" type="button">
+                Continue
             </button>
 
         </section>
 
-        <section
-            id="feedbackBox">
 
-            <h2>
+        <!-- STEP 2: Select Continent -->
+        <section id="step2" class="step-card hidden">
 
-                Feedback
+            <h2>Where Are You Applying?</h2>
 
-            </h2>
-
-            <p>
-
-                Upload your resume
-                and choose a target region.
-
+            <p class="step-description">
+                Select the continent where you plan to apply for jobs.
+                Your resume will be assessed using the regional guidelines
+                available in our system.
             </p>
+
+            <div class="form-group">
+
+                <label for="continent">
+                    Select Your Target Continent
+                </label>
+
+                <select id="continent">
+                    <option value="">Choose a continent</option>
+                    <option value="North America">North America</option>
+                    <option value="South America">South America</option>
+                    <option value="Europe">Europe</option>
+                    <option value="Africa">Africa</option>
+                    <option value="Asia">Asia</option>
+                    <option value="Oceania">Oceania</option>
+                </select>
+
+            </div>
+
+            <p id="continentError" class="error-message"></p>
+
+            <div class="button-group">
+
+                <button id="backBtn" type="button" class="secondary-button">
+                    Back
+                </button>
+
+                <button id="analyzeBtn" type="button">
+                    Analyze Resume
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- STEP 3: Results -->
+        <section id="step3" class="step-card hidden">
+
+            <h2>Your Resume Analysis</h2>
+
+            <p class="step-description">
+                Here are the recommendations based on your selected region.
+            </p>
+
+            <div class="result-summary">
+                <p>Selected Region</p>
+                <h3 id="selectedRegion"></h3>
+                <p id="analyzedFile"></p>
+            </div>
+
+            <div id="feedbackBox">
+
+                <!-- JavaScript inserts recommendations here -->
+
+            </div>
+
+            <p class="results-disclaimer">
+                These recommendations are based on regional guidelines.
+                They are not yet an analysis of the actual text in your resume.
+                Hiring practices can also vary between countries and employers
+                within the same continent.
+            </p>
+
+            <div class="button-group">
+
+                <button id="resultsBackBtn" type="button" class="secondary-button">
+                    Back
+                </button>
+
+                <button id="restartBtn" type="button">
+                    Analyze Another Resume
+                </button>
+
+            </div>
 
         </section>
 
     </main>
 
+
     <footer>
-
-        <p>
-
-            Senior Capstone Project
-            • Computer Science
-            • St. Bonaventure University
-
-        </p>
-
+        <p>International Resume Analyzer | Senior Capstone Project</p>
     </footer>
+
+    <script src="script.js"></script>
 
 </body>
 
