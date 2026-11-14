@@ -1,4 +1,5 @@
 
+
 // ==========================================
 // INTERNATIONAL RESUME ANALYZER
 // Three-step navigation and regional feedback
@@ -139,6 +140,35 @@ resumeUpload.addEventListener("change", function () {
 
 
 // ==========================================
+// CONTINUE BUTTON: STEP 1 TO STEP 2
+// ==========================================
+
+continueBtn.addEventListener("click", function () {
+
+    console.log("Continue button clicked");
+
+    uploadError.textContent = "";
+
+    // Check that a resume has been selected
+
+    if (!selectedResume) {
+
+        uploadError.textContent =
+            "Please select your resume before continuing.";
+
+        return;
+    }
+
+    console.log("Resume found:", selectedResume.name);
+
+    // Move to Step 2
+
+    showStep(2);
+
+});
+
+
+// ==========================================
 // STEP 2: SELECT CONTINENT
 // ==========================================
 
@@ -224,6 +254,8 @@ analyzeBtn.addEventListener("click", async function () {
     } catch (error) {
 
         continentError.textContent = error.message;
+
+        console.error("Analysis error:", error);
 
     } finally {
 
